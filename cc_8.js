@@ -14,3 +14,21 @@ let calculateDiscount = (price, discountRate) => price - (price * discountRate);
 // Test Data 
 console.log(`Final Price: $${calculateDiscount(100, 0.2).toFixed(2)}`);
 console.log(`Final Price: $${calculateDiscount(250, 0.15).toFixed(2)}`);
+
+
+// Task 3 Service Fee Calculation 
+let calculateServiceFee = (amount, serviceType) => {
+    let fee = 0;
+    if (serviceType === "Premium") {
+        fee = amount * 0.15; // premium gets a 15% fee
+    } else if (serviceType === "Standard") {
+        fee = amount * 0.10; // standard gets a 10% fee
+    } else if (serviceType === "Basic") {
+        fee = amount * 0.05; // basic gets 5% fee
+    }
+    return fee; 
+}; 
+
+// Test Data 
+console.log(calculateServiceFee(200, "Premium")); // Expected output: "Service Fee: $30.00"
+console.log(calculateServiceFee(500, "Standard")); // Expected output: "Service Fee: $50.00")
