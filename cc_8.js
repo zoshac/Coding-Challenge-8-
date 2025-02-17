@@ -84,3 +84,21 @@ function filterLargeTransactions(transactions, filterFunction) {
 let finalTransactions = filterLargeTransactions(transactions, amount => amount > 1000);
 
 console.log(finalTransactions); 
+
+// Task 7 Shopping Cart Tracker  
+function createCartTracker () {
+    let total = 0;
+
+    return function(price) {
+        total += price; 
+    };
+}
+
+// Test Data 
+let cart = createCartTracker();
+
+console.log(cart(20)); // Expected output: "Total Cart Value: $20"
+console.log(cart(35)); // Expected output: "Total Cart Value: $55"
+
+
+// Task 8 Savings Groth Projection 
