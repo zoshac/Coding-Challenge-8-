@@ -102,3 +102,15 @@ console.log(cart(35)); // Expected output: "Total Cart Value: $55"
 
 
 // Task 8 Savings Groth Projection 
+function calculateSavings(years, amount) {
+    if (years >= 10) { // savings to be increased until year 10
+        console.log(`Projeted savings after yeras: $${amount.toFixed(2)}`);
+        return amount;
+    }
+    amount *= 1.05; // amount to be increased by 5%
+    return calculateSavings(years + 1, amount);
+}
+
+// Test data 
+calculateSavings(8, 1000); // Expected output: "Projected Savings: $1102.50"
+calculateSavings(5, 5000); // Expected output: "Projected Savings: $6381.41"
